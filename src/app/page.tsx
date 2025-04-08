@@ -10,7 +10,7 @@ export default function Page() {
         <h1 className="text-4xl font-bold text-teal mb-6">Muntlig skal eies</h1>
         <ExplanationGrid buttons={buttons} />
         <h2 className="font-extrabold text-3xl p-8">Mulige spørsmål:</h2>
-        <ExplanationGrid buttons={QbuttonData} />
+        <ExplanationGrid  buttons={QbuttonData} />
       </div>
     </main>
   );

@@ -1,7 +1,7 @@
 export const QbuttonData = [
    {
       label: "Hva skjer når jeg sletter en pasient?",
-      text: "Når du trykker på 'Slett pasient', vises først en bekreftelsesdialog hvor du må skrive 'Slett pasient permanent' for å bekrefte.<br /><br />Dette er gjort for å unngå at noen ved et uhell sletter en pasient.<br /><br />Når det er bekreftet, sendes en DELETE-forespørsel til backend med pasientens ID. Backend sletter da pasienten fra MongoDB. Hvis du har satt opp cascading delete (det har vi ikke ennå), vil tilknyttede rapporter også fjernes automatisk.<br /><br />Etter sletting blir brukeren redirectet tilbake til pasientoversikten. Vi fjerner også pasienten fra lokal state slik at siden oppdateres umiddelbart."
+      text: "Når du trykker på 'Slett pasient', vises først en bekreftelsesdialog hvor du må skrive 'Slett pasient permanent' for å bekrefte.<br /><br />Dette er gjort for å unngå at noen ved et uhell sletter en pasient.<br /><br />Når det er bekreftet, sendes en DELETE-forespørsel til backend med pasientens ID. Backend sletter da pasienten fra MongoDB. <br /><br />Etter sletting blir brukeren redirectet tilbake til pasientoversikten. Vi fjerner også pasienten fra lokal state slik at siden oppdateres umiddelbart."
     },
     {
       label: "Kan en pasient se rapporter som ikke er knyttet til dem?",

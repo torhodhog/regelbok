@@ -30,7 +30,13 @@ export default function ExplanationGrid({
 
       {selected && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="bg-white max-w-md w-full p-6 rounded-xl shadow-lg text-gray-800 space-y-4">
+          <div className="bg-white max-w-md w-full p-6 rounded-xl shadow-lg text-gray-800 space-y-4 "> 
+            <button
+              onClick={() => setSelected(null)}
+              className="block ml-auto mt-4 text-sm text-teal hover:underline"
+            >
+              Lukk
+            </button>
             <h2 className="text-xl font-bold text-teal">{selected.label}</h2>
             <p dangerouslySetInnerHTML={{ __html: selected.text }} />
 
@@ -44,12 +50,7 @@ export default function ExplanationGrid({
               </div>
             )}
 
-            <button
-              onClick={() => setSelected(null)}
-              className="block ml-auto mt-4 text-sm text-teal hover:underline"
-            >
-              Lukk
-            </button>
+            
           </div>
         </div>
       )}
