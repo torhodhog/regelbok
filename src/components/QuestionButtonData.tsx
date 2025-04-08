@@ -22,7 +22,17 @@ export const QbuttonData = [
     {
       label: "Hvordan tar dere vare på sikkerheten til pasientene?",
       text: "Sikkerhet er en kjerneverdi i prosjektet vårt, særlig fordi vi håndterer sensitive helseopplysninger.<br /><br />1. **Autentisering:** Vi bruker JWT (JSON Web Tokens) for å sikre at kun innloggede brukere får tilgang til systemet. Når en terapeut logger inn, får vedkommende et token som må sendes med alle forespørsler. Uten gyldig token får man ikke tilgang til data.<br /><br />2. **Rollebasert tilgang:** Tokenet inneholder også informasjon om brukerens rolle. Terapeuter har tilgang til alle pasientdata, mens pasientbrukere bare får tilgang til sine egne data. Backend validerer alle forespørsler basert på dette.<br /><br />3. **Datavalidering og feilhåndtering:** Vi kontrollerer all input som sendes inn via frontend før den lagres i databasen. I tillegg har vi lagt inn tilbakemeldinger ved feil slik at terapeuten vet hva som skjer dersom noe går galt.<br /><br />4. **Begrenset innsikt:** Pasienter har ikke tilgang til rapporter, meldinger eller smertehistorikk som tilhører andre. Alle forespørsler er låst til deres egen pasient-ID på backend.<br /><br />5. **Hosting:** Både backend og database er hostet på sikre plattformer (Railway og MongoDB Atlas), og vi bruker miljøvariabler til å beskytte sensitive nøkler.<br /><br />Dette gir en trygg og strukturert løsning der kun autoriserte brukere har tilgang til relevant informasjon – og pasientenes sikkerhet er ivaretatt på alle nivåer.",
+    },
+    {
+      label: "Hva skjer hvis tokenet er ugyldig eller utløpt?",
+      text: "Alle API-kall i frontend sender med `Authorization: Bearer token` i headeren.<br /><br />Hvis tokenet er ugyldig eller mangler, svarer backend med en 401 Unauthorized-feil.<br /><br />Frontend kan da fange dette og sende brukeren tilbake til innlogging. Dette sikrer at ingen kan hente data uten gyldig identitet."
+    },
+    {
+      label: "Hvordan sørger dere for at rapporter ikke blir sendt dobbelt?",
+      text: "Vi har satt opp frontend slik at knappen for 'Send rapport' kun aktiveres én gang per klikk. I tillegg nullstilles feltene og en suksessmelding vises.<br /><br />Hvis API-kallet feiler, vises en feilmelding. Dette hindrer at terapeuten trykker flere ganger på rad.<br /><br />På sikt kunne vi vurdert å sette opp en debounce-funksjon eller backend-sjekk som ser om en lik rapport allerede eksisterer."
     }
+    
+    
     
     
 ]

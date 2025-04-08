@@ -122,7 +122,27 @@ fetch er standardmåten å kommunisere med backend på i moderne JavaScript og b
     "Eksempel på bruk: Når en terapeut logger inn, sendes en POST-forespørsel til `/api/auth/login`, som sjekker om brukeren finnes og returnerer et token. Når terapeuten deretter åpner pasientlisten, sendes en GET-forespørsel til `/api/pasienter/mine`, og backenden returnerer kun pasienter som er knyttet til innlogget terapeut (basert på token).<br /><br />" +
   
     "Denne strukturen gjør at både frontend og mobilapp kan bruke samme backend, og vi slipper dobbeltarbeid. API-et er dermed et sentralt nav for hele plattformen vår."
+  },
+  {
+    label: "MongoDB",
+    text: "Vi bruker MongoDB som database fordi den er fleksibel, lett å sette opp, og gratis å bruke med MongoDB Atlas.<br /><br />I stedet for tabeller som i SQL, bruker MongoDB dokumenter (JSON-lignende objekter). Det gjør det enkelt å lagre pasientdata, rapporter og meldinger med ulik struktur.<br /><br />MongoDB passer perfekt for prosjekter i vekst der vi ikke kjenner alle behov på forhånd."
+  },
+  {
+    label: "Node.js & Express",
+    text: "Node.js gjør det mulig å kjøre JavaScript på serveren. Express er et rammeverk for Node som gjør det enkelt å lage API-endepunkter.<br /><br />Vi bruker dette i backend for å sette opp ruter som: `/api/pasienter`, `/api/rapporter`, osv. Disse ruter kobles til MongoDB og returnerer JSON-data til frontend.<br /><br />Alt vi gjør i frontend som krever lagring eller henting skjer via disse ruter."
+  },
+  {
+    label: "API",
+    text: "API står for Application Programming Interface, og lar frontend kommunisere med backend via HTTP-kall (GET, POST, PUT, DELETE).<br /><br />I prosjektet bruker vi API-kall for å hente pasientdata, sende inn rapporter, registrere smerter osv. Alle API-rutene ligger i backend, og frontend snakker med disse ved hjelp av `fetch()`.<br /><br />API er det 'limet' som binder frontend og backend sammen."
+  },
+  {
+    label: "map() i JSX",
+    text: "map() er en funksjon i JavaScript som brukes til å gå gjennom en liste (array) og gjøre noe med hvert element.<br /><br />I React bruker vi map() for å lage JSX-elementer basert på en liste. Eksempelvis når vi lister ut pasienter, rapporter eller knapper i denne regelboken.<br /><br />Eksempel fra prosjektet vårt:<br />Når vi henter alle pasienter og vil vise dem i en dropdown:<br /><br /><code>{pasienter.map((p) => ( <option key={p._id} value={p._id}>{p.navn}</option> ))}</code><br /><br />Dette gjør at vi enkelt kan generere dynamisk innhold som oppdateres når listen endres."
   }
+  
+  
+  
+  
   ,
   {
     label: "API Route",
