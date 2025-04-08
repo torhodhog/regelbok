@@ -7,7 +7,11 @@ interface ButtonItem {
   image?: string;
 }
 
-export default function ExplanationGrid({ buttons }: { buttons: ButtonItem[] }) {
+export default function ExplanationGrid({
+  buttons,
+}: {
+  buttons: ButtonItem[];
+}) {
   const [selected, setSelected] = useState<ButtonItem | null>(null);
 
   return (
@@ -30,15 +34,13 @@ export default function ExplanationGrid({ buttons }: { buttons: ButtonItem[] }) 
             <h2 className="text-xl font-bold text-teal">{selected.label}</h2>
             <p dangerouslySetInnerHTML={{ __html: selected.text }} />
 
-
             {selected.image && (
               <div className="overflow-hidden rounded-md border mt-2">
                 <img
-  src={selected.image}
-  alt={selected.label}
-  className="w-full h-auto object-contain max-h-[680px]"
-/>
-
+                  src={selected.image}
+                  alt={selected.label}
+                  className="w-full h-auto object-contain max-h-[680px]"
+                />
               </div>
             )}
 
