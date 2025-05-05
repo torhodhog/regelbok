@@ -1,3 +1,11 @@
+
+interface ButtonItem {
+  label: string;
+  text: string;
+  image?: string;
+}
+
+
 export default function ExplanationGrid({
   buttons,
   onSelect,
