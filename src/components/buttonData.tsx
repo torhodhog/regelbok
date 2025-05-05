@@ -223,6 +223,36 @@ Et annet eksempel er når vi viser en suksessmelding bare hvis 'success'-state e
         "- Supernyttig for dynamiske sider som handler om én bestemt bruker, rapport, eller annet<br /><br />" +
         "👀 Vi bruker det f.eks. i PatientDetailsPage for å vite hvilken pasient vi skal vise detaljer for."
     },
+    {
+      label: "cookies",
+      text: `
+        Cookies er små datafiler som lagres i nettleseren din av et nettsted. De brukes ofte til å <strong>huske at du er logget inn</strong>, spore innstillinger eller holde på informasjon mellom sidevisninger.<br /><br />
+    
+        I vårt prosjekt bruker vi en <strong>httpOnly-cookie</strong> for å lagre JWT-tokenet. Dette betyr at JavaScript ikke har tilgang til tokenet, og det <strong>øker sikkerheten</strong> mot for eksempel XSS-angrep.<br /><br />
+    
+        Når du sender API-kall med <code>credentials: "include"</code>, sendes cookien automatisk med – og backend vet hvem du er.`,
+    },
+    {
+      label: "Tokens",
+      text: `
+        Et token er en liten tekststreng som brukes for å <strong>bevise at en bruker er logget inn</strong>. Det kan sammenlignes med en billett du viser for å få adgang.<br /><br />
+    
+        I vårt prosjekt genererer backend et <strong>JWT (JSON Web Token)</strong> ved innlogging. Tokenet inneholder informasjon om hvem brukeren er og hvilken rolle de har.<br /><br />
+    
+        I webversjonen blir dette tokenet lagt i en cookie, mens i mobilversjonen blir det lagret lokalt og sendt i headeren ved API-kall.`,
+    },
+    {
+      label: "Filter",
+      text: `
+        <code>filter()</code> er en innebygd funksjon i JavaScript som brukes på lister (arrays). Den lar deg <strong>beholde bare de elementene som oppfyller en bestemt betingelse</strong>.<br /><br />
+    
+        Eksempel: Hvis du har en liste med meldinger og bare vil vise de som er uleste, kan du skrive <code>meldinger.filter(m => !m.lest)</code>.<br /><br />
+    
+        Det returnerer en <strong>ny liste</strong> uten å endre den opprinnelige. Vi bruker filter mange steder i prosjektet, f.eks. for å filtrere ut pasienter, logger eller notater.`,
+    }
+    
+    
+    
     
   
 ];
